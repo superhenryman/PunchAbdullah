@@ -1,1 +1,1 @@
-const you_win = new Audio("youwin.mp3"); you_win.play();
+const you_win = new Audio("https://superhenryman.github.io/PunchAbdullah/congrats/youwin.mp3"); you_win.play();
