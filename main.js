@@ -6,6 +6,8 @@ const dead_sound = new Audio("assets/abdullah_dead.mp3");
 const hit_sound = new Audio("assets/abdullah_hit.mp3");
 const taunt_sound = new Audio("assets/abdullah_taunt.mp3");
 const critcal_hit = new Audio("assets/critical_hit.mp3");
+const hp_gain_hp_lose = document.getElementById("number"); // either add "positive" class when the punching bag gains HP, or add the "negative" class when abdullah loses HP
+
 
 function flashScreen() {
     const flash = document.getElementById("screen-flash");
@@ -32,20 +34,26 @@ function checkForLetters(text) {
 punchingbag.addEventListener("click", () => {
     if (Math.floor(Math.random() * 100) >=80) {
         abdullahHP += 5000;
+        hp_gain_hp_lose.className = "number positive";
+        hp_gain_hp_lose.innerText = "Abdullah gained 5000 HP!"
         taunt_sound.play(); // get taunted
         return;
     }  
     if (Math.floor(Math.random() * 100) >= 70) {
-        abdullahHP -= Math.floor(Math.random() * 10000);
+        const critHit = Math.floor(Math.random() * 10000)
+        abdullahHP -= critHit;
+        hp_gain_hp_lose.className = "number negative";
+        hp_gain_hp_lose.innerText = `-${critHit} damage!`;
         hit_sound.play();
         flashScreen();
         shakeScreen();
         critcal_hit.play(); // ness bat slam
-    }
-    if (abdullahHP == 0) {
-        document.getElementById("send").click();
+        hit_sound.play();
+        return;
     }
     abdullahHP -= normalpunch; 
+    hp_gain_hp_lose.className = "number negative";
+    hp_gain_hp_lose.innerText = `-${normalpunch} damage!`;
     hit_sound.play(); // so fucking goofy
 
     flashScreen();             
@@ -73,6 +81,13 @@ setInterval(() => {
         dead_sound.play();
         document.getElementById("abdullah").src = "assets/abdullahdead.png";
         abdullahHP = 0;
+        
     }
 }, 10);
+
+setInterval(() => {
+    if (abdullahHP <= 0) {
+        document.getElementById("send").click();
+    }
+}, 1000)
 
