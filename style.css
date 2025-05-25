@@ -11,6 +11,21 @@
   z-index: 9999;
 }
 
+.number {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.positive {
+  color: green;
+  text-shadow: 0 0 5px lime;
+}
+
+.negative {
+  color: red;
+  text-shadow: 0 0 5px red;
+}
+
 @keyframes shake {
   0% { transform: translate(0, 0); }
   20% { transform: translate(-5px, 5px); }
