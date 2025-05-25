@@ -1,0 +1,1 @@
+const you_win = new Audio("/assets/youwin.mp3"); you_win.play();
