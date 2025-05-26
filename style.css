@@ -1,3 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "VT323", monospace;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px white;
+}
+
+.box {
+  border: 3px solid white;
+  padding: 30px;
+  display: inline-block;
+  background-color: black;
+  box-shadow: 0 0 10px white;
+  border-radius: 10px;
+}
+
+#abdullah {
+  width: 220px;
+  margin-top: 20px;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+#abdullah-hp {
+  font-size: 32px;
+}
+
+.number {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+.positive {
+  color: lime;
+  text-shadow: 0 0 5px lime;
+}
+
+.negative {
+  color: red;
+  text-shadow: 0 0 5px red;
+}
+
 #screen-flash {
   position: fixed;
   top: 0;
@@ -11,28 +73,25 @@
   z-index: 9999;
 }
 
-.number {
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.positive {
-  color: green;
-  text-shadow: 0 0 5px lime;
-}
-
-.negative {
-  color: red;
-  text-shadow: 0 0 5px red;
-}
-
 @keyframes shake {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(-5px, 5px); }
-  40% { transform: translate(5px, -5px); }
-  60% { transform: translate(-5px, 5px); }
-  80% { transform: translate(5px, -5px); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(5px, -5px);
+  }
+  60% {
+    transform: translate(-5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .shake {
