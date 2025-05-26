@@ -38,7 +38,7 @@ h1 {
   width: 220px;
   margin-top: 20px;
   image-rendering: pixelated;
-  cursor: pointer;
+  cursor: url('assets/cursor.png'), pointer;
 }
 
 #abdullah-hp {
